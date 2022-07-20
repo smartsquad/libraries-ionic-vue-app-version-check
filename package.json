@@ -1,0 +1,40 @@
+{
+  "name": "@smartsquad/ionic-vue-app-version-check",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://giltab.smartsquad.io/smart-squad/libraries/ionic-vue-app-version-check.git"
+  },
+  "module": "dist/app-version-check.esm.js",
+  "main": "dist/app-version-check.js",
+  "unpkg": "dist/app-version-check.js",
+  "types": "dist/app-version-check.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "firebase": "<9",
+    "vue": ">=3"
+  },
+  "devDependencies": {
+    "@types/semver": "^7.3.10",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.20.0",
+    "firebase": "<9",
+    "vue": ">=3"
+  },
+  "dependencies": {
+    "@capacitor/app": "^1.1.1",
+    "@ionic/vue": "^6.1.14",
+    "semver": "^7.3.7"
+  }
+}
