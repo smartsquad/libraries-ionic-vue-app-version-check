@@ -23,18 +23,18 @@
     "vue": ">=3"
   },
   "devDependencies": {
-    "@types/semver": "^7.3.10",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
+    "@types/semver": "^7.3.12",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/eslint-config-typescript": "^11.0.0",
-    "eslint": "^8.20.0",
+    "@vue/eslint-config-typescript": "^11.0.1",
+    "eslint": "^8.23.1",
     "firebase": "<9",
     "vue": ">=3"
   },
   "dependencies": {
-    "@capacitor/app": "^1.1.1",
-    "@ionic/vue": "^6.1.14",
+    "@capacitor/app": "^4.0.1",
+    "@ionic/vue": "^6.2.7",
     "semver": "^7.3.7"
   }
 }
