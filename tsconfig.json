@@ -12,7 +12,9 @@
     "composite": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declarationDir": "./dist"
+    "declarationDir": "./dist",
+    "declaration": true,
+    "skipLibCheck": true
   },
   "include": [ "./src" ]
 }

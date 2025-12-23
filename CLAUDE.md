@@ -20,7 +20,7 @@ The plugin exposes a Vue 3 plugin with a `$avc` global property:
 
 - **[app-version-check.ts](src/app-version-check.ts)**: Plugin entry point. Defines `IAppVersionCheckOptions` interface and installs the `$avc.verify()` method on Vue components.
 
-- **[verify.ts](src/verify.ts)**: Core verification logic. Fetches `app_versions` from Firebase Remote Config (JSON with `c` for current and `m` for mandatory versions), compares against the device's app version using semver, and triggers either `mandatoryUpdateAction` or shows an alert via Ionic's `alertController`.
+- **[verify.ts](src/verify.ts)**: Core verification logic. Uses Firebase modular SDK (`fetchAndActivate`, `getValue` from `firebase/remote-config`) to fetch `app_versions` (JSON with `c` for current and `m` for mandatory versions), compares against the device's app version using semver, and triggers either `mandatoryUpdateAction` or shows an alert via Ionic's `alertController`.
 
 ## Remote Config Format
 
@@ -33,7 +33,7 @@ The Firebase Remote Config value (default key: `app_versions`) must be a JSON st
 
 ## Peer Dependencies
 
-Requires Firebase SDK <9 (legacy namespace API) and Vue >=3.
+Requires Firebase SDK ^12 (modular API) and Vue >=3.
 
 ## Commit Message Style
 

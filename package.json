@@ -19,22 +19,22 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "firebase": "<9",
+    "firebase": "^12",
     "vue": ">=3"
   },
   "devDependencies": {
-    "@types/semver": "^7.3.12",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/eslint-config-typescript": "^11.0.1",
-    "eslint": "^8.23.1",
-    "firebase": "<9",
-    "vue": ">=3"
+    "@types/semver": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.50.1",
+    "@typescript-eslint/parser": "^8.50.1",
+    "@vue/cli-plugin-eslint": "^5.0.9",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "eslint": "^9.39.2",
+    "firebase": "^12.7.0",
+    "vue": "^3.5.26"
   },
   "dependencies": {
-    "@capacitor/app": "^4.0.1",
-    "@ionic/vue": "^6.2.7",
-    "semver": "^7.3.7"
+    "@capacitor/app": "^8.0.0",
+    "@ionic/vue": "^8.7.14",
+    "semver": "^7.7.3"
   }
 }

@@ -1,8 +1,8 @@
 import { App } from 'vue';
-import Firebase from 'firebase';
+import { RemoteConfig } from 'firebase/remote-config';
 import { AlertOptions } from '@ionic/vue';
 export interface IAppVersionCheckModule {
-    verify: (firebase: Firebase.app.App) => Promise<void>;
+    verify: (remoteConfig: RemoteConfig) => Promise<void>;
 }
 export interface IAppVersionCheckOptions {
     /** Enables the debug console logs */
@@ -18,7 +18,7 @@ declare const _default: {
     install: (app: App, options: IAppVersionCheckOptions) => void;
 };
 export default _default;
-declare module '@vue/runtime-core' {
+declare module 'vue' {
     interface ComponentCustomProperties {
         $avc: IAppVersionCheckModule;
     }

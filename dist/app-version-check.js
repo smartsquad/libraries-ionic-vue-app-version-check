@@ -24,9 +24,9 @@ export default {
             }
         };
         consolePrint('AppVersionCheckModule - install', { options: safeOptions });
-        // inject a globally available $translate() method
+        // inject a globally available $avc method
         app.config.globalProperties.$avc = {
-            verify: async (firebase) => verify(firebase, safeOptions, consolePrint)
+            verify: async (remoteConfig) => verify(remoteConfig, safeOptions, consolePrint)
         };
         consolePrint('AppVersionCheckModule - installed');
     }
