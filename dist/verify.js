@@ -1,16 +1,16 @@
+import { fetchAndActivate, getValue } from 'firebase/remote-config';
 import { App } from '@capacitor/app';
 import semver from 'semver';
 import { alertController } from '@ionic/vue';
-export const verify = async (firebase, options, consolePrint) => {
+export const verify = async (remoteConfig, options, consolePrint) => {
     consolePrint('AppVersionCheckModule - initialize');
-    if (firebase == undefined) {
-        console.error('AppVersionCheckModule - initialize');
+    if (remoteConfig == undefined) {
+        console.error('AppVersionCheckModule - remoteConfig is undefined');
         return;
     }
-    const remoteConfigs = firebase.remoteConfig();
-    await remoteConfigs.fetchAndActivate();
+    await fetchAndActivate(remoteConfig);
     consolePrint('AppVersionCheckModule - remoteConfigs - configurations fetched');
-    const appVersions = remoteConfigs.getString(options.appVersionsKey);
+    const appVersions = getValue(remoteConfig, options.appVersionsKey).asString();
     consolePrint('AppVersionCheckModule - remoteConfigs - app version', { appVersionsKey: options.appVersionsKey, appVersions });
     if (appVersions === '' || typeof appVersions !== 'string') {
         consolePrint('AppVersionCheckModule - remoteConfigs - app versions value is not valid');

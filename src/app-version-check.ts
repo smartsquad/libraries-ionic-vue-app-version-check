@@ -1,10 +1,10 @@
 import { App } from 'vue';
-import Firebase from 'firebase';
+import { RemoteConfig } from 'firebase/remote-config';
 import { verify } from './verify';
 import { AlertOptions } from '@ionic/vue';
 
 export interface IAppVersionCheckModule {
-  verify: (firebase: Firebase.app.App) => Promise<void>;
+  verify: (remoteConfig: RemoteConfig) => Promise<void>;
 }
 
 export interface IAppVersionCheckOptions {
@@ -51,17 +51,16 @@ export default {
 
     consolePrint('AppVersionCheckModule - install', { options: safeOptions })
 
-    // inject a globally available $translate() method
+    // inject a globally available $avc method
     app.config.globalProperties.$avc = {
-      verify: async (firebase: Firebase.app.App) => verify(firebase, safeOptions, consolePrint) 
+      verify: async (remoteConfig: RemoteConfig) => verify(remoteConfig, safeOptions, consolePrint)
     }
 
     consolePrint('AppVersionCheckModule - installed')
   }
 }
 
-declare module '@vue/runtime-core' {
-  //Bind to `this` keyword
+declare module 'vue' {
   interface ComponentCustomProperties {
     $avc: IAppVersionCheckModule;
   }

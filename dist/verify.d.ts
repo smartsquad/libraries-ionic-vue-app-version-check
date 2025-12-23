@@ -1,4 +1,3 @@
-import Firebase from 'firebase';
-import { App } from '@capacitor/app';
+import { RemoteConfig } from 'firebase/remote-config';
 import { IAppVersionCheckOptions } from './app-version-check';
-export declare const verify: (firebase: Firebase.app.App, options: IAppVersionCheckOptions, consolePrint: (...args: any) => void) => Promise<void>;
+export declare const verify: (remoteConfig: RemoteConfig, options: IAppVersionCheckOptions, consolePrint: (...args: any) => void) => Promise<void>;
